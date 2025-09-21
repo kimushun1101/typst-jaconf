@@ -71,7 +71,7 @@
 アップロードしたPDFがそのまま公開されます。
 などの説明が書かれるであろうテンプレートを作ってみました。
 本稿では、このテンプレートファイルの使い方および Typst による執筆作業の概要について解説します。
-この原稿のソースコードは https://github.com/kimushun1101/typst-jp-conf-template で公開しております。
+この原稿のソースコードは https://github.com/kimushun1101/typst-jaconf で公開しております。
 ご要望や修正の提案があれば、Issue や Pull Request でお知らせください。筆者に届く形であればSNSなど他の手段でも構いません。
 Typst の概要についてお知りになりたい方は、https://github.com/kimushun1101/How-to-use-typst-for-paper-jp にもスライド形式の資料を用意しておりますので、ぜひこちらもご覧ください。
 
@@ -129,7 +129,7 @@ $ u = K_P e + K_I integral_0^t e d t $ <eq:PI-controller>
 ```typ
 #import "@preview/jaconf:0.5.1": jaconf, definition, lemma, theorem, corollary, proof, appendix
 ```
-#red-warn[他のテンプレートを使用する際には#link("https://github.com/kimushun1101/typst-jp-conf-template/blob/5862f4fd21b4f00488a56657e198864625d117b8/jaconf-eng/lib.typ#L9-L35")[`lib.typ`のコード]を参考に、以下のようにご自身のコード内で定義および有効化をしてください。]
+#red-warn[他のテンプレートを使用する際には#link("https://github.com/kimushun1101/typst-jaconf/blob/5862f4fd21b4f00488a56657e198864625d117b8/jaconf-eng/lib.typ#L9-L35")[`lib.typ`のコード]を参考に、以下のようにご自身のコード内で定義および有効化をしてください。]
 
 ```typ
 // Theorem environments
@@ -168,7 +168,7 @@ $ u = K_P e + K_I integral_0^t e d t $ <eq:PI-controller>
 文法上では特に規則はありませんが、個人的にはラベルの命名規則として、数式の場合には "eq:" から、図の場合には "fig:" から、表の場合には"tab:" から、セクションの場合には "sec:" から、付録セクションであれば "appendix:" から始めるようにラベル名を設定しており、参考文献のラベルは "著者名発行年タイトルの最初の単語"で名付けております。
 
 = おわりに <sec:conclusion>
-対応していただきたい内容や修正していただきたい内容などありましたら、#link("https://github.com/kimushun1101/typst-jp-conf-template")[GitHub] を通して、Issues や Pull Requests をいただけますと幸いです。
+対応していただきたい内容や修正していただきたい内容などありましたら、#link("https://github.com/kimushun1101/typst-jaconf")[GitHub] を通して、Issues や Pull Requests をいただけますと幸いです。
 このテンプレートは日本語論文のために作成しておりますため、日本語での投稿で構いません。
 誤字脱字や文法、表現など細かい修正でも大変ありがたいです。
 

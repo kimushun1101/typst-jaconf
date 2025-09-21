@@ -73,7 +73,7 @@
 アップロードしたPDFがそのまま公開されます。
 というような説明が書かれるであろうテンプレートを作ってみました。
 本稿では、このテンプレートファイルの使い方および Typst による執筆作業の概要について解説します。
-この原稿のソースコードは https://github.com/kimushun1101/typst-jp-conf-template で公開しております。
+この原稿のソースコードは https://github.com/kimushun1101/typst-jaconf で公開しております。
 ご要望や修正の提案があれば、Issue や Pull Request でお知らせください。筆者に届く形であればSNSなど他の手段でも構いません。
 Typst の概要についてお知りになりたい方は、https://github.com/kimushun1101/How-to-use-typst-for-paper-jp にもスライド形式の資料を用意しておりますので、ぜひこちらもご覧ください。
 
@@ -371,8 +371,8 @@ table の columns の数に応じて、文字列の配列が自動的に整列�
 ```typ
 #import "libs/mscs/lib.typ": mscs as temp, definition, lemma, theorem, corollary, proof, appendix
 ```
-さらに元をたどると#link("https://github.com/kimushun1101/typst-jp-conf-template/blob/5862f4fd21b4f00488a56657e198864625d117b8/jaconf-eng/lib.typ#L9")[`lib.typ`]でctheoremsパッケージ (https://typst.app/universe/package/ctheorems) をインポートして使用しております。
-#red-warn[他のテンプレートを使用する際には#link("https://github.com/kimushun1101/typst-jp-conf-template/blob/5862f4fd21b4f00488a56657e198864625d117b8/jaconf-eng/lib.typ#L9-L35")[`lib.typ`のコード]を参考に、以下のようにご自身のコード内で定義および有効化をしてください。]
+さらに元をたどると#link("https://github.com/kimushun1101/typst-jaconf/blob/5862f4fd21b4f00488a56657e198864625d117b8/jaconf-eng/lib.typ#L9")[`lib.typ`]でctheoremsパッケージ (https://typst.app/universe/package/ctheorems) をインポートして使用しております。
+#red-warn[他のテンプレートを使用する際には#link("https://github.com/kimushun1101/typst-jaconf/blob/5862f4fd21b4f00488a56657e198864625d117b8/jaconf-eng/lib.typ#L9-L35")[`lib.typ`のコード]を参考に、以下のようにご自身のコード内で定義および有効化をしてください。]
 
 ```typ
 // Theorem environments
@@ -409,7 +409,7 @@ CSLファイルは著者が編集する必要はありませんが、詳細が�
 = おわりに <sec:conclusion>
 まだまだTypst自体は発展途上中であり、最新の状態は日々変化しております。
 また筆者の理解や表現が誤っている箇所もあるかと思います。
-対応していただきたい内容や修正していただきたい内容などありましたら、#link("https://github.com/kimushun1101/typst-jp-conf-template")[GitHub] を通して、Issues や Pull Requests をいただけますと幸いです。
+対応していただきたい内容や修正していただきたい内容などありましたら、#link("https://github.com/kimushun1101/typst-jaconf")[GitHub] を通して、Issues や Pull Requests をいただけますと幸いです。
 このテンプレートは日本語論文のために作成しておりますため、日本語での投稿で構いません。もちろん英語での投稿でも問題ありません。
 誤字脱字や文法、表現など細かい修正でも大変ありがたいです。
 筆者は、Typstが普及するためには学会のフォーマットで配布されることが不可欠だと感じています。

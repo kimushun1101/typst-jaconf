@@ -1,13 +1,13 @@
-![Deploy workflow](https://github.com/kimushun1101/typst-jp-conf-template/actions/workflows/release.yml/badge.svg)
-![Deploy workflow](https://github.com/kimushun1101/typst-jp-conf-template/actions/workflows/gh-pages.yml/badge.svg)
+![Deploy workflow](https://github.com/kimushun1101/typst-jaconf/actions/workflows/release.yml/badge.svg)
+![Deploy workflow](https://github.com/kimushun1101/typst-jaconf/actions/workflows/gh-pages.yml/badge.svg)
 
-# typst-jp-conf-template
+# typst-jaconf
 
 Typstで日本語論文を書くときのテンプレートです。
-コンパイル済みの資料は[GitHub Pages](https://kimushun1101.github.io/typst-jp-conf-template/typst-jp-conf.pdf)からお読みできます。  
+コンパイル済みの資料は[GitHub Pages](https://kimushun1101.github.io/typst-jaconf/main-example.pdf)からお読みできます。  
 Typstの概要について知りたい方は、[スライド資料](https://github.com/kimushun1101/How-to-use-typst-for-paper-jp)も作成しましたのでご覧ください。
 
-[vscode-typst.webm](https://github.com/kimushun1101/typst-jp-conf-template/assets/13430937/f227b85b-0266-417b-a24a-54f28f9a71b8)
+[vscode-typst.webm](https://github.com/kimushun1101/typst-jaconf/assets/13430937/f227b85b-0266-417b-a24a-54f28f9a71b8)
 
 | ファイル  | 意味                    |
 | -------- | ----------------------- |
@@ -39,7 +39,7 @@ VS Codeを用いたGUI操作については、[Typstテンプレートを使用�
 
 1. `File`→`Open Folder` で`main.typ`があるフォルダーを開く。
 2. Extensions (`Ctrl` + `Shift` + `X`) から拡張機能[Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist)をインストール。
-3. Explorer (`Ctrl` + `Shift` + `E`) から `main.typ` を開いた状態で、画面右上にある ![view-icon](https://github.com/kimushun1101/typst-jp-conf-template/assets/13430937/a44c52cb-d23a-4fdb-ac9f-dc2b47deb40a) アイコン（Typst Preview）をクリック。
+3. Explorer (`Ctrl` + `Shift` + `E`) から `main.typ` を開いた状態で、画面右上にある ![view-icon](https://github.com/kimushun1101/typst-jaconf/assets/13430937/a44c52cb-d23a-4fdb-ac9f-dc2b47deb40a) アイコン（Typst Preview）をクリック。
 4. `Ctrl` + `S` でPDFを生成。
 
 ### 他のエディターの場合

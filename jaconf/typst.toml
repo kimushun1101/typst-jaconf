@@ -3,7 +3,7 @@ name = "jaconf"
 version = "0.5.1"
 compiler = "0.13.1"
 entrypoint = "lib.typ"
-repository = "https://github.com/kimushun1101/typst-jp-conf-template"
+repository = "https://github.com/kimushun1101/typst-jaconf"
 authors = [
   "Shunsuke Kimura <https://github.com/kimushun1101>",
   "ささくらり <https://github.com/m-tsuru>",
