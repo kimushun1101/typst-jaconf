@@ -4,7 +4,7 @@
 # typst-jaconf
 
 Typstで日本語論文を書くときのテンプレートです。
-コンパイル済みの資料は[GitHub Pages](https://kimushun1101.github.io/typst-jaconf/main-example.pdf)からお読みできます。  
+コンパイル済みの資料は[GitHub Pages](https://kimushun1101.github.io/typst-jaconf/jaconf-example.pdf)からお読みできます。  
 Typstの概要について知りたい方は、[スライド資料](https://github.com/kimushun1101/How-to-use-typst-for-paper-jp)も作成しましたのでご覧ください。
 
 [vscode-typst.webm](https://github.com/kimushun1101/typst-jaconf/assets/13430937/f227b85b-0266-417b-a24a-54f28f9a71b8)
