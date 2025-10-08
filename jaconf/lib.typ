@@ -1,7 +1,7 @@
 // import third-party packages
 #import "@preview/codly:1.3.0": codly-init
 #import "@preview/ctheorems:1.1.3": thmplain, thmproof, thmrules
-#import "@preview/cjk-unbreak:0.1.1": remove-cjk-break-space
+#import "@preview/cjk-unbreak:0.2.0": remove-cjk-break-space
 
 // Theorem environments
 #let thmja = thmplain.with(base: {}, separator: [#h(0.5em)], titlefmt: strong, inset: (top: 0em, left: 0em))
