@@ -2,7 +2,7 @@
 // Copyright 2024, 2025 Shunsuke Kimura
 
 #let conference-name = "SICE SI部門講演会"
-#import "@preview/jaconf:0.5.1": jaconf, definition, lemma, theorem, corollary, proof, appendix
+#import "@preview/jaconf:0.6.0": jaconf, definition, lemma, theorem, corollary, proof, appendix
 
 #let sice-si(
   title: [日本語タイトル],
