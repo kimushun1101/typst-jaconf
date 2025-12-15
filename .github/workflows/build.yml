@@ -1,0 +1,25 @@
+name: Build test document
+
+on:
+  push:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            fonts-noto \
+            fonts-noto-cjk \
+            fonts-noto-cjk-extra
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v3
+
+      - name: Compile PDF
+        run: typst compile --root . tests/test-make-doc.typ out/jaconf-example.pdf

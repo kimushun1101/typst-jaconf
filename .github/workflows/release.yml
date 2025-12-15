@@ -12,7 +12,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      TYPST_FILE_NAME: main
+      TYPST_FILE_NAME: tests/test-make-doc
 
     steps:
       - uses: actions/checkout@v4
@@ -21,7 +21,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y fonts-noto fonts-noto-cjk fonts-noto-cjk-extra
       - uses: typst-community/setup-typst@v3
-      - run: typst compile ${{ env.TYPST_FILE_NAME }}.typ
+      - run: typst compile --root . ${{ env.TYPST_FILE_NAME }}.typ
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
