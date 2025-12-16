@@ -25,6 +25,7 @@ runs:
         key: apt-${{ runner.os }}
 
     - name: Install fonts
+      shell: bash
       run: |
         sudo apt-get update
         sudo apt-get install -y \
