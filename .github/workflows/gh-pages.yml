@@ -21,32 +21,11 @@ jobs:
       id-token: write
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Cache apt debs (fonts)
-        uses: actions/cache@v4
+      - name: Typst common steps
+        uses: ./.github/actions/typst-steps
         with:
-          path: /var/cache/apt/archives/*.deb
-          key: apt-${{ runner.os }}
-
-      - name: Install fonts
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            fonts-noto \
-            fonts-noto-cjk \
-            fonts-noto-cjk-extra
-
-      - name: Setup Typst
-        uses: typst-community/setup-typst@v3
-
-      - name: Compile PDF
-        run: |
-          typst compile \
-             --root . \
-            "${TYPST_INPUT}" \
-            "${OUTPUT_PDF}"
+          input_file: ${{ env.TYPST_INPUT }}
+          output_file: ${{ env.OUTPUT_PDF }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
