@@ -1,0 +1,18 @@
+name: Compile test document
+
+on:
+  push:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: CJK Typst compile steps
+        uses: ./.github/actions/typst-steps
+        with:
+          input_file: tests/test-compile-doc.typ
+          output_file: test-compile-doc.pdf

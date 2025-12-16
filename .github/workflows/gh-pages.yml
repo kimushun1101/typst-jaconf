@@ -5,32 +5,36 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
+env:
+  TYPST_INPUT: tests/test-compile-doc.typ
+  OUTPUT_PDF: jaconf-example.pdf
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}jaconf-example.pdf
+      url: ${{ steps.deployment.outputs.page_url }}/${{ env.OUTPUT_PDF }}
+
     permissions:
       pages: write
       id-token: write
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
-      - name: Install fonts
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y fonts-noto fonts-noto-cjk fonts-noto-cjk-extra
-      - uses: typst-community/setup-typst@v3
-      - name: Compile
-        run: |
-          mkdir ./out
-          typst compile ./main.typ ./out/jaconf-example.pdf
-      - uses: actions/upload-pages-artifact@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: CJK Typst compile steps
+        uses: ./.github/actions/typst-steps
         with:
-          path: ./out
-      - uses: actions/deploy-pages@v4
+          input_file: ${{ env.TYPST_INPUT }}
+          output_file: ${{ env.OUTPUT_PDF }}
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
         id: deployment
+        uses: actions/deploy-pages@v4
