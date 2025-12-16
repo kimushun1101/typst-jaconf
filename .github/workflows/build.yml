@@ -15,3 +15,4 @@ jobs:
         uses: ./.github/actions/typst-steps
         with:
           input_file: tests/test-make-doc.typ
+          output_file: test-make-doc.pdf
