@@ -8,23 +8,45 @@ on:
 permissions:
   contents: write
 
+env:
+  TYPST_INPUT: tests/test-make-doc.typ
+  OUTPUT_PDF: ${{ github.event.repository.name }}-${{ github.ref_name }}.pdf
+
 jobs:
   release:
     runs-on: ubuntu-latest
-    env:
-      TYPST_FILE_NAME: tests/test-make-doc
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache apt debs (fonts)
+        uses: actions/cache@v4
+        with:
+          path: /var/cache/apt/archives/*.deb
+          key: apt-${{ runner.os }}
+
       - name: Install fonts
         run: |
           sudo apt-get update
-          sudo apt-get install -y fonts-noto fonts-noto-cjk fonts-noto-cjk-extra
-      - uses: typst-community/setup-typst@v3
-      - run: typst compile --root . ${{ env.TYPST_FILE_NAME }}.typ
-      - name: Create GitHub Release
+          sudo apt-get install -y \
+            fonts-noto \
+            fonts-noto-cjk \
+            fonts-noto-cjk-extra
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v3
+
+      - name: Compile PDF
+        run: |
+          typst compile \
+             --root . \
+            "${TYPST_INPUT}" \
+            "${OUTPUT_PDF}"
+
+      - name: Create GitHub Release (draft)
         uses: softprops/action-gh-release@v2
         with:
-          files: ${{ env.TYPST_FILE_NAME }}.pdf
+          files: ${{ env.OUTPUT_PDF }}
           draft: true
           generate_release_notes: true

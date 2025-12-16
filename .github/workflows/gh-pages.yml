@@ -5,19 +5,30 @@ on:
     branches:
       - main
 
+env:
+  TYPST_INPUT: tests/test-make-doc.typ
+  OUTPUT_PDF: jaconf-example.pdf
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}/jaconf-example.pdf
+      url: ${{ steps.deployment.outputs.page_url }}/${{ env.OUTPUT_PDF }}
 
     permissions:
       pages: write
       id-token: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache apt debs (fonts)
+        uses: actions/cache@v4
+        with:
+          path: /var/cache/apt/archives/*.deb
+          key: apt-${{ runner.os }}
 
       - name: Install fonts
         run: |
@@ -32,13 +43,15 @@ jobs:
 
       - name: Compile PDF
         run: |
-          mkdir -p out
-          typst compile --root . tests/test-make-doc.typ out/jaconf-example.pdf
+          typst compile \
+             --root . \
+            "${TYPST_INPUT}" \
+            "${OUTPUT_PDF}"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: .
 
       - name: Deploy to GitHub Pages
         id: deployment
