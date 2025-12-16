@@ -30,4 +30,4 @@ jobs:
         uses: typst-community/setup-typst@v3
 
       - name: Compile PDF
-        run: typst compile --root . tests/test-make-doc.typ out/jaconf-example.pdf
+        run: typst compile --root . tests/test-make-doc.typ
