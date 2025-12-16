@@ -1,4 +1,4 @@
-name: "Typst common steps"
+name: "CJK Typst compile steps"
 
 description: "Composite action providing checkout, cache, fonts and Typst setup. Optionally runs a compile command."
 

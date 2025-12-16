@@ -1,4 +1,4 @@
-name: Build test document
+name: Compile test document
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Typst common steps
+      - name: CJK Typst compile steps
         uses: ./.github/actions/typst-steps
         with:
           input_file: tests/test-compile-doc.typ
