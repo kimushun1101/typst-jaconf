@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 env:
-  TYPST_INPUT: tests/test-make-doc.typ
+  TYPST_INPUT: tests/test-compile-doc.typ
   OUTPUT_PDF: ${{ github.event.repository.name }}-${{ github.ref_name }}.pdf
 
 jobs:

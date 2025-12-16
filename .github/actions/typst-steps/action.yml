@@ -6,11 +6,11 @@ inputs:
   input_file:
     description: "The input file to typst compile."
     required: true
-    default: 'tests/test-make-doc.typ'
+    default: 'tests/test-compile-doc.typ'
   output_file:
     description: "The output file from typst compile."
     required: false
-    default: '${{ github.event.repository.name }}-${{ github.ref_name }}.pdf'
+    default: 'test-compile-doc.pdf'
 
 runs:
   using: composite

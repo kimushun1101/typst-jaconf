@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  TYPST_INPUT: tests/test-make-doc.typ
+  TYPST_INPUT: tests/test-compile-doc.typ
   OUTPUT_PDF: jaconf-example.pdf
 
 jobs:
