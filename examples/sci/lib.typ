@@ -29,19 +29,34 @@
     font-main: font-mincho,
     font-latin: font-latin,
     // 外観 Appearance
+    paper-margin: (top: 20mm, bottom: 27mm, left: 20mm, right: 20mm),
+    paper-columns: 2,  // 1: single column, 2: double column
+    page-number: none,  // e.g. "1/1"
+    column-gutter: 4%+0pt,
+    spacing-heading: 1.2em,
+    front-matter-order: ("title", "title-en", "authors", "authors-en", "abstract"), // "keywords"はSCI25では使用しません。
+    front-matter-spacing: 1.5em,
+    front-matter-margin: 2.0em,
+    abstract-language: "en",  // "ja" or "en"
+    keywords-language: "en",  // "ja" or "en"
     bibliography-style: bytes(read("sci.csl")),
     // 見出し Headings
     heading-abstract: [*Abstract--*],
-    heading-keywords: [*Keywords*: ],
+    // heading-keywords: [*Keywords*: ], // "keywords"はSCI25では使用しません。
     heading-bibliography: [参考文献],
     heading-appendix: [付録],
     // フォントサイズ Font size
+    font-size-title: 16pt,
+    font-size-title-en: 12pt,
+    font-size-authors: 12pt,
+    font-size-authors-en: 12pt,
+    font-size-abstract: 10pt,
     font-size-heading: 12pt,
     font-size-main: 10pt,
     font-size-bibliography: 10pt,
     // 補足語 Supplement
-    supplement-image: [Fig.],
-    supplement-table: [Table],
+    supplement-image: [図],
+    supplement-table: [表],
     supplement-separator: [: ],
   )
   body
