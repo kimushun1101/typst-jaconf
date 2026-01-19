@@ -33,7 +33,9 @@
   front-matter-order: ("title", "authors", "title-en", "authors-en", "abstract", "keywords"),  // 独自コンテンツの追加も可能
   front-matter-spacing: 1.5em,
   front-matter-margin: 2.0em,
+  abstract-margin: (top: 1em, bottom: 1em, left: 0.7cm, right: 0.7cm),
   abstract-language: "en",  // "ja" or "en"
+  keywords-margin: (top: 1em, bottom: 1em, left: 0.7cm, right: 0.7cm),
   keywords-language: "en",  // "ja" or "en"
   bibliography-style: "sice.csl",  // "sice.csl", "rsj.csl", "ieee", etc.
   // 見出し Headings
@@ -156,9 +158,10 @@
       align(center, text(font-size-authors-en, authors-en, font: font-latin))
       v(front-matter-spacing, weak: true)
     } else if item == "abstract" and abstract != none {
-      // Display abstract and index terms.
+      // Display abstract.
+      v(abstract-margin.top, weak: true)
       grid(
-        columns: (0.7cm, 1fr, 0.7cm),
+        columns: (abstract-margin.left, 1fr, abstract-margin.right),
         [],
         {
           set par(first-line-indent: 0em)
@@ -173,11 +176,12 @@
         },
         []
       )
-      v(front-matter-spacing, weak: true)
+      v(abstract-margin.bottom, weak: true)
     } else if item == "keywords" and keywords != () {
-      // Display abstract and index terms.
+      // Display index terms as keywords.
+      v(keywords-margin.top, weak: true)
       grid(
-        columns: (0.7cm, 1fr, 0.7cm),
+        columns: (keywords-margin.left, 1fr, keywords-margin.right),
         [],
         {
           set par(first-line-indent: 0em)
@@ -192,7 +196,7 @@
         },
         []
       )
-      v(front-matter-spacing, weak: true)
+      v(keywords-margin.bottom, weak: true)
     } else {
       item
     }

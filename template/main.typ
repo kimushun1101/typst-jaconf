@@ -26,7 +26,9 @@
   front-matter-order: ("title", "authors", "title-en", "authors-en", "abstract", "keywords"),  // 独自コンテンツの追加も可能
   front-matter-spacing: 1.5em,
   front-matter-margin: 2.0em,
+  abstract-margin: (top: 1.5em, bottom: 1.5em, left: 0.7cm, right: 0.7cm),
   abstract-language: "en",  // "ja" or "en"
+  keywords-margin: (top: 1.5em, bottom: 1.5em, left: 0.7cm, right: 0.7cm),
   keywords-language: "en",  // "ja" or "en"
   bibliography-style: "sice.csl",  // "sice.csl", "rsj.csl", "ieee", etc.
   // 見出し Headings
