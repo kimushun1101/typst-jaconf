@@ -71,7 +71,7 @@ This is a template for **academic conference papers in Japanese**.
 文書ファイルの先頭で `jaconf` テンプレートを`import`して、引数付きのshowルールで呼び出してください。
 
 ```typ
-#import "@preview/jaconf:0.6.0": jaconf, definition, lemma, theorem, corollary, proof, appendix
+#import "@preview/jaconf:0.7.0": jaconf, definition, lemma, theorem, corollary, proof, appendix
 
 // デフォルト値でよい引数は省略可能
 #show: jaconf.with(
