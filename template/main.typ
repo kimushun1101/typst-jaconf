@@ -123,6 +123,7 @@ $ u = K_P e + K_I integral_0^t e d t $ <eq:PI-controller>
   // image("figs/quadratic.svg", width: 90%),
   caption: [$x^2$ のグラフ],
 ) <fig:quadratic>
+ここでplacementは、紙面の上(top)に寄せるか下(bottom)に寄せるかを決められます。言及している文章に近い方や見栄えが良い方に調整してください。
 
 === 定理環境 <sec:theorem>
 以下はtheorem環境の使用例です。
