@@ -146,6 +146,14 @@
   } else {
     front-matter-order
   }
+  // keywords も同様に正規化する。none の場合は空配列として扱い、後段の join でエラーにならないようにする
+  let keywords = if keywords == none {
+    ()
+  } else if type(keywords) == str {
+    (keywords,)
+  } else {
+    keywords
+  }
   for item in front-matter-order {
     if item == "title" and title != [] {
       // Display the paper's title.
