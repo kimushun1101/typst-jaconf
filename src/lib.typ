@@ -146,10 +146,11 @@
   } else {
     front-matter-order
   }
-  // keywords も同様に正規化する。none の場合は空配列として扱い、後段の join でエラーにならないようにする
+  // keywords を配列に正規化する。none は空配列、配列以外 (str や content) は単一要素配列として扱い、
+  // 後段の join でエラーにならないようにする。content の場合 ([aaa] や ([aaa]) のような渡し方) も吸収する。
   let keywords = if keywords == none {
     ()
-  } else if type(keywords) == str {
+  } else if type(keywords) != array {
     (keywords,)
   } else {
     keywords
