@@ -139,79 +139,86 @@
   show figure.where(kind: image): set figure(placement: top, supplement: supplement-image)
   show figure.where(kind: image): set figure.caption(position: bottom, separator: supplement-separator)
 
-  // Title and Authors
   // 単一要素を文字列で渡された場合 (例: front-matter-order: ("abstract")) は配列に変換する
   let front-matter-order = if type(front-matter-order) == str {
     (front-matter-order,)
   } else {
     front-matter-order
   }
-  // keywords を配列に正規化する。none は空配列、配列以外 (str や content) は単一要素配列として扱い、
-  // 後段の join でエラーにならないようにする。content の場合 ([aaa] や ([aaa]) のような渡し方) も吸収する。
+  // keywords を配列に正規化する。配列以外 (str や content) は単一要素配列として扱い、後段の join でエラーにならないようにする。
+  // none はそのまま none として保持し、ブロックごと非表示の判定に使う。
   let keywords = if keywords == none {
-    ()
+    none
   } else if type(keywords) != array {
     (keywords,)
   } else {
     keywords
   }
   for item in front-matter-order {
-    if item == "title" and title != [] {
-      // Display the paper's title.
-      align(center, text(font-size-title, title, weight: "bold", font: font-heading))
-      v(front-matter-spacing, weak: true)
-    } else if item == "authors" and authors != [] {
-      // Display the authors list.
-      align(center, text(font-size-authors, authors, font: font-main))
-      v(front-matter-spacing, weak: true)
-    } else if item == "title-en" and title-en != [] {
-      // Display the paper's title in English.
-      align(center, text(font-size-title-en, title-en, weight: "bold", font: font-latin))
-      v(front-matter-spacing, weak: true)
-    } else if item == "authors-en" and authors-en != [] {
-      // Display the authors list in English.
-      align(center, text(font-size-authors-en, authors-en, font: font-latin))
-      v(front-matter-spacing, weak: true)
-    } else if item == "abstract" and abstract != none {
-      // Display abstract.
-      v(abstract-margin.top, weak: true)
-      grid(
-        columns: (abstract-margin.left, 1fr, abstract-margin.right),
-        [],
-        {
-          set par(first-line-indent: 0em)
-          if abstract != none {
+    if item == "title" {
+      if title != none and title != [] {
+        // Display the paper's title.
+        align(center, text(font-size-title, title, weight: "bold", font: font-heading))
+        v(front-matter-spacing, weak: true)
+      }
+    } else if item == "authors" {
+      if authors != none and authors != [] {
+        // Display the authors list.
+        align(center, text(font-size-authors, authors, font: font-main))
+        v(front-matter-spacing, weak: true)
+      }
+    } else if item == "title-en" {
+      if title-en != none and title-en != [] {
+        // Display the paper's title in English.
+        align(center, text(font-size-title-en, title-en, weight: "bold", font: font-latin))
+        v(front-matter-spacing, weak: true)
+      }
+    } else if item == "authors-en" {
+      if authors-en != none and authors-en != [] {
+        // Display the authors list in English.
+        align(center, text(font-size-authors-en, authors-en, font: font-latin))
+        v(front-matter-spacing, weak: true)
+      }
+    } else if item == "abstract" {
+      if abstract != none {
+        // Display abstract.
+        v(abstract-margin.top, weak: true)
+        grid(
+          columns: (abstract-margin.left, 1fr, abstract-margin.right),
+          [],
+          {
+            set par(first-line-indent: 0em)
             set text(
               font-size-abstract,
               font: if abstract-language == "ja" { font-main }
                 else { font-latin }
             )
             [#heading-abstract #h(0.5em) #remove-cjk-break-space(abstract)]
-          }
-        },
-        []
-      )
-      v(abstract-margin.bottom, weak: true)
-    } else if item == "keywords" and keywords != () {
-      // Display index terms as keywords.
-      v(keywords-margin.top, weak: true)
-      grid(
-        columns: (keywords-margin.left, 1fr, keywords-margin.right),
-        [],
-        {
-          set par(first-line-indent: 0em)
-          if keywords != () {
+          },
+          []
+        )
+        v(abstract-margin.bottom, weak: true)
+      }
+    } else if item == "keywords" {
+      if keywords != none {
+        // Display index terms as keywords.
+        v(keywords-margin.top, weak: true)
+        grid(
+          columns: (keywords-margin.left, 1fr, keywords-margin.right),
+          [],
+          {
+            set par(first-line-indent: 0em)
             set text(
               font-size-abstract,
               font: if keywords-language == "ja" { font-main }
                 else { font-latin }
             )
             [#heading-keywords #h(0.5em) #keywords.join(", ")]
-          }
-        },
-        []
-      )
-      v(keywords-margin.bottom, weak: true)
+          },
+          []
+        )
+        v(keywords-margin.bottom, weak: true)
+      }
     } else {
       item
     }
