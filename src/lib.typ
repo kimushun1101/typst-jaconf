@@ -140,6 +140,12 @@
   show figure.where(kind: image): set figure.caption(position: bottom, separator: supplement-separator)
 
   // Title and Authors
+  // 単一要素を文字列で渡された場合 (例: front-matter-order: ("abstract")) は配列に変換する
+  let front-matter-order = if type(front-matter-order) == str {
+    (front-matter-order,)
+  } else {
+    front-matter-order
+  }
   for item in front-matter-order {
     if item == "title" and title != [] {
       // Display the paper's title.
