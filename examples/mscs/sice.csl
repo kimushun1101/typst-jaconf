@@ -16,8 +16,9 @@
     <updated>2024-03-30T14:26:30+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
-  <locale xml:lang="en"> <!-- なぜかenしか効かない -->
+  <locale>
     <terms>
+      <term name="and">and</term>
       <term name="page-range-delimiter">/</term>
     </terms>
   </locale>
@@ -56,7 +57,7 @@
       </if>
       <else>
         <names variable="author">
-          <name initialize-with=". " delimiter=", " and="text"/>
+          <name initialize-with=". " delimiter=", " and="text" delimiter-precedes-last="never"/>
           <label form="short" prefix=", "/>
           <substitute>
             <names variable="editor"/>
@@ -67,7 +68,7 @@
   </macro>
   <macro name="editor">
     <names variable="editor">
-      <name initialize-with=". " delimiter=", " and="text"/>
+      <name initialize-with=". " delimiter=", " and="text" delimiter-precedes-last="never"/>
       <label form="short" prefix=", "/>
     </names>
   </macro>

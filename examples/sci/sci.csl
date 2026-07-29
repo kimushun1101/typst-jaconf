@@ -17,6 +17,11 @@
     <updated>2024-07-06T21:04:32+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
+  <locale>
+    <terms>
+      <term name="and">and</term>
+    </terms>
+  </locale>
   <locale xml:lang="en">
     <date form="text">
       <date-part name="month" form="short" suffix=" "/>
@@ -40,7 +45,7 @@
       </if>
       <else>
         <names variable="author">
-          <name initialize-with=". " delimiter=", " and="text"/>
+          <name initialize-with=". " delimiter=", " and="text" delimiter-precedes-last="never"/>
           <label form="short" prefix=", "/>
         </names>
       </else>
