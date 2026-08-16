@@ -20,6 +20,20 @@
   <locale>
     <terms>
       <term name="and">and</term>
+      <term name="volume" form="short">
+        <single>vol.</single>
+        <multiple>vols.</multiple>
+      </term>
+      <term name="issue" form="short">
+        <single>no.</single>
+        <multiple>nos.</multiple>
+      </term>
+      <term name="page" form="short">
+        <single>p.</single>
+        <multiple>pp.</multiple>
+      </term>
+      <term name="open-quote">“</term>
+      <term name="close-quote">”</term>
     </terms>
   </locale>
   <macro name="edition">
