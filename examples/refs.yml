@@ -13,18 +13,18 @@ kimura2015asymptotic:
         publisher: Taylor & Francis
 
 # 和文学術論文誌
-kimura2023doctor:
+kimura2025collision:
     language: japanese
     type: Article
-    title: 制御理論専攻の学生生活と建設会社への入社
-    author: ["木村, 駿介"]
-    page-range: 342-345
-    date: 2023
+    title: 2次元LiDAR制御バリア関数による衝突回避ヒューマンアシスト制御
+    author: ["木村, 駿介", "西本, 昂樹"]
+    page-range: 194-202
+    date: 2025
     parent:
         type: Periodical
-        title: 計測と制御
-        volume: 62
-        issue: 6
+        title: 計測自動制御学会論文集
+        volume: 61
+        issue: 3
         publisher: 公益社団法人 計測自動制御学会
 
 # 国際会議論文
