@@ -31,7 +31,7 @@
     font-latin: font-latin,
     // 外観 Appearance
     spacing-heading: 10pt,
-    bibliography-style: "rsj.csl",  // "sice.csl", "rsj.csl", "ieee", etc.
+    bibliography-style: bytes(read("rsj-conf.csl")),
     abstract-language: abstract-language,
     // 見出し Headings
     heading-abstract: [#h(1em)],

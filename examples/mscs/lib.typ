@@ -28,6 +28,8 @@
     font-heading: font-gothic,
     font-main: font-mincho,
     font-latin: font-latin,
+    // 外観 Appearance
+    bibliography-style: bytes(read("sice.csl")),
     // 見出し Headings
     heading-abstract: [*Abstract--* #h(0.5em)],
     heading-keywords: [*Key Words*: #h(1em)],
