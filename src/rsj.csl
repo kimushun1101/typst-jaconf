@@ -17,6 +17,11 @@
     <updated>2024-03-30T14:26:30+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
+  <locale>
+    <terms>
+      <term name="and">and</term>
+    </terms>
+  </locale>
   <macro name="edition">
     <choose>
       <if type="bill book chapter graphic legal_case legislation motion_picture paper-conference report song" match="any">
